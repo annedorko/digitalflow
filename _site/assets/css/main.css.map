@@ -4,7 +4,7 @@
 	"sources": [
 		"main.scss",
 		"_sass/main.scss",
-		"_sass/chota.min.css"
+		"_sass/chota.min.scss"
 	],
 	"sourcesContent": [
 		"@import \"main\";\n",
