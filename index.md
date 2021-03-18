@@ -51,7 +51,7 @@ I know how to turn WordPress into a fully-fledged crowd-funded membership websit
 
 ...I think you get the idea. I know how to do _a lot_, and I know how to do it well.
 
-If you are running a business or a product and have found yourself in over your head and aren't even sure what you need, there's a good chance I can help you figure things out.
+If you are running a business or a project and have found yourself in over your head and aren't even sure what you need, there's a good chance I can help you figure things out.
 
 ## Let's get started.
 
