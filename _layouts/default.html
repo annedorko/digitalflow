@@ -1,12 +1,26 @@
-<!DOCTYPE html>
-<html lang="{{ site.lang | default: "en-US" }}">
-  <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta charset="utf-8">
-    <title>{{ page.title }} - {{ site.title }}</title>
-    <link rel="stylesheet" href="{{ "/assets/css/main.css" | relative_url }}">
-  </head>
-  <body>
-    {{ content }}
-  </body>
-</html>
+{% include header.html class=page.class %}
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <h1 class="logo">{{ site.title }}</h1>
+        <p>{{ site.tagline }}</p>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-8">
+        <article class="content">
+          {{ content }}
+        </article>
+      </div>
+      <div class="col">
+        <div class="sidebar">
+          <h3 id="contact">Let’s talk.</h3>
+          <p>I’m Anne Dorko. You can reach me via email.</p>
+          <a href="mailto:anne@dorko.tv?subject=Let%E2%80%99s+work+together" class="button dark">anne@dorko.tv</a>
+        </div>
+      </div>
+    </div>
+  </div>
+{% include footer.html %}
