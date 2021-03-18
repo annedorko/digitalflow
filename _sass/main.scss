@@ -52,7 +52,12 @@ header + .container {
     font-size: 1.2em;
   }
 }
+.stickto {
+  position: relative;
+}
 .sidebar {
+  position: sticky;
+  top: 1em;
   font-size: 18px;
   h3 {
     margin-bottom: .2em;
