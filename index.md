@@ -55,4 +55,6 @@ If you are running a business or a project and have found yourself in over your 
 
 ## Let's get started.
 
-<a href="mailto:anne@dorko.tv?subject=Let%E2%80%99s+work+together" class="button dark">anne@dorko.tv</a>
+Book a call and we can talk about how I can help you find your **digital flow**.
+
+<a href="https://calendly.com/annedorko/15min" class="button primary" target="_blank"><i class="fas fa-mug-hot"></i> Book a call.</a>
