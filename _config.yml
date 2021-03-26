@@ -3,3 +3,6 @@ baseurl: ""
 title: Digital Flow
 tagline: tailored web and data management for busy people with unique projects
 email: anne@dorko.tv
+schedule: "https://calendly.com/annedorko/15min"
+
+permalink: /:title/

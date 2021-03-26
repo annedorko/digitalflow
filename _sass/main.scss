@@ -3,51 +3,198 @@
 $native-font-stack: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 
 $logo-font: alga, serif, $native-font-stack;
-$body-font: lemance, $native-font-stack;
+$body-font: jaf-domus, $native-font-stack;
+$heading-font: new-hero, $native-font-stack;
+$mono-font: roboto-mono, $native-font-stack;
 
-$primary-color: #F95700;
+// Small tablets and large smartphones (landscape view)
+$screen-sm-min: 576px;
+
+// Small tablets (portrait view)
+$screen-md-min: 768px;
+
+// Tablets and small desktops
+$screen-lg-min: 992px;
+
+// Large tablets and desktops
+$screen-xl-min: 1200px;
+
+@import "mobile-mixins";
+
+// https://www.canva.com/colors/color-meanings/royal-blue/
+// $primary-color: #F95700;
+$primary-color: #4169E1;
+$secondary-color: #8A57CE;
+$action-color: #FF3F00;
+$highlight-color: #FFD53D;
+$dark-color: #211522;
+$light-grey: #9CA6B8;
 
 :root {
   --bg-color: #f5f5f7;
-  --color-primary: #F95700;
+  --color-primary: #4169E1;
+  --color-darkGrey: #211522;
+  --color-lightGrey: #9CA6B8;
 }
-
+// Disables transitions until after class has been removed via javascript
+.preload * {
+  -webkit-transition: none !important;
+  -moz-transition: none !important;
+  -ms-transition: none !important;
+  -o-transition: none !important;
+}
 body {
   font-family: $body-font;
-  font-weight: 400;
+  font-weight: 300;
   font-style: normal;
-  font-size: 22px;
+  font-size: 26px;
 }
 h1, h2, h3, h4, h5, h6 {
-  font-weight: 700;
+  font-family: $heading-font;
+  font-weight: 800;
+  line-height: 1.2em;
   letter-spacing: -1px;
 }
-.logo {
+h1 {
+  font-family: $logo-font;
+}
+.brand {
+  font-size: 20px;
+  line-height: 1.5em;
+  padding: 1em;
+  h1, p {
+    display: inline-block;
+  }
+  a {
+    color: $dark-color;
+    &:hover {
+      opacity: 1;
+    }
+  }
+  p.tagline {
+    margin: 0;
+    padding: 0;
+    display: inline;
+    font-family: $mono-font;
+    margin-left: .5em;
+  }
+}
+h1.logo, .logo {
+  color: $dark-color;
+  letter-spacing: 0px;
+  font-size: 3em;
   font-family: $logo-font, serif;
   font-weight: 700;
   font-style: normal;
-  letter-spacing: 0px;
+  line-height: 1em;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  z-index: 1;
+  transition: letter-spacing 1s;
+  &:hover {
+    letter-spacing: 2px;
+    span {
+      letter-spacing: 0px;
+    }
+  }
+  span {
+    color: $primary-color;
+    letter-spacing: 0px !important;
+  }
+}
+.nav {
+  font-size: 22px;
+  font-weight: 700;
+  flex-wrap: wrap;
+  &::after {
+    content: '';
+    display: block;
+    height: .2em;
+    width: 100%;
+    background: $light-grey;
+  }
+  .nav-right {
+    font-family: $heading-font;
+    @include md {
+      a {
+        width: initial !important;
+        margin-top: initial !important;
+      }
+    }
+    a {
+      width: 100%;
+      padding-right: 1em;
+      margin-top: .25em;
+    }
+  }
+  .nav-left {
+    align-items: center;
+    font-family: $heading-font;
+    // font-weight: 300;
+    // letter-spacing: 1px;
+    // text-transform: uppercase;
+    a {
+      display: block;
+      line-height: 1.2em;
+      color: white;
+      transition: all 1s ease-in-out;
+      &.active {
+        color: white;
+      }
+      &:hover {
+        opacity: 1;
+        color: rgba(white, .9);
+        &::after {
+          width: 100%;
+          background: darken($primary-color, 10%);
+        }
+      }
+      &::after {
+        content: ' ';
+        display: block;
+        background: $primary-color;
+        border-radius: .25em;
+        height: .5em;
+        width: .5em;
+        transition: all 1s ease-in-out;
+      }
+      &.active::after {
+        background: $highlight-color;
+        width: 100%;
+      }
+    }
+  }
+  a.contact {
+    font-weight: 800;
+    font-size: 1.75em;
+    letter-spacing: -1px;
+    color: white;
+    background: $primary-color;
+    border-left: .25em solid darken($primary-color, 10%);
+    padding-left: 1em;
+    transition: background-color .5s ease-in-out, border-color .5s ease-in-out, letter-spacing .5s ease-in-out;
+    white-space: nowrap;
+    i {
+      margin-left: .5em;
+    }
+    &:hover {
+      opacity: 1;
+      background: darken($primary-color,10%);
+      border-left-color: $primary-color;
+      letter-spacing: 0px;
+    }
+  }
 }
 header {
   background: white;
 }
-.homepage {
-  font-size: 26px;
-  h1.logo {
-    margin: 0;
-    font-size: 3em;
-  }
-}
-header + .container {
-  padding-top: 1.3em;
-}
-.button i {
-  margin-right: .5em;
+.container {
+  max-width: 992px;
 }
 .content {
   font-size: 22px;
   max-width: 550px;
-
   .button {
     font-size: 1.2em;
   }
@@ -68,5 +215,226 @@ header + .container {
   ul {
     margin: 0;
     margin-left: 1.5em;
+  }
+}
+
+.landing {
+  &.services section:first-of-type {
+    li {
+      display: inline-block;
+      background: $dark-color;
+      color: white;
+      padding: 0 .5em;
+      border-radius: 1em;
+    }
+  }
+  section.even {
+    background: white;
+  }
+  section:first-of-type {
+    background: $highlight-color;
+    color: $dark-color;
+    text-align: center;
+    strong {
+      background: white;
+      padding: 0 .5em;
+      border-radius: 1em;
+    }
+    ul, ol, li {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      + p {
+        margin-top: 1em;
+        font-size: 1.5em;
+      }
+    }
+    li {
+      margin-bottom: .5em;
+    }
+  }
+  h1:not(.logo) {
+    font-size: 2.5em;
+    line-height: .8em;
+    margin: 0;
+    margin-bottom: .5em;
+    @include md {
+      font-size: 3em;
+    }
+  }
+  section {
+    padding: 3em 0 2em 0;
+  }
+  .container {
+    max-width: 675px;
+  }
+  .button {
+    background: transparent;
+    border: .15em solid $dark-color;
+    color: $dark-color;
+    font-size: 1.2em;
+    font-family: $heading-font;
+    font-weight: bold;
+    border-radius: 1.5em;
+    margin-top: .5em;
+  }
+  .col {
+    padding-right: 1em;
+    padding-left: 1em;
+    @include md {
+      padding-right: 0;
+      padding-left: 0;
+    }
+  }
+}
+.portfolio {
+  section:not(:first-of-type) {
+    padding: 0;
+    overflow: hidden;
+    position: relative;
+    &:hover {
+      @include sm {
+        .preview img {
+          box-shadow: 0 .5em .8em rgba(darken($primary-color, 45%), .8);
+        }
+      }
+    }
+    .background {
+      display: none;
+      @include sm {
+        display: block;
+        filter: blur(12px) saturate(180%);
+        opacity: .2;
+        width: 100%;
+        height: 100%;
+        height: auto;
+        position: absolute;
+        z-index: 0;
+      }
+    }
+    .preview {
+      padding-top: 0;
+    }
+    @include sm {
+      .preview {
+        padding-right: 2em;
+        img {
+          border-radius: .5em;
+          transition: all .5s ease-in-out;
+          box-shadow: 0 .2em .25em rgba($dark-color, .1);
+        }
+      }
+    }
+    .container {
+      max-width: 1080px;
+      position: relative;
+      z-index: 1;
+      padding: 0 0 3em 0;
+      @include sm {
+        padding: 3em 0 2em 0;
+      }
+    }
+  }
+  section.even {
+    background: white;
+    .background {
+      opacity: .1;
+    }
+  }
+  section.odd:not(.first-of-type) {
+    background: $primary-color;
+    color: white;
+    ul.tools li.tag {
+      border-color: white;
+      background: white;
+      color: $dark-color;
+    }
+    .button {
+      color: white;
+      border-color: white;
+    }
+  }
+  section:not(.first-of-type) {
+    .text {
+      padding: 1em;
+      @include md {
+        padding: 0;
+      }
+    }
+    h2, p {
+      margin: 0;
+      padding: 0;
+    }
+    h2 {
+      line-height: 1em;
+    }
+    .service {
+      font-family: $mono-font;
+      font-size: .9em;
+      line-height: 1.1em;
+      margin: .25em 0 .5em 0;
+    }
+    ul.tools {
+      margin: 0;
+      padding: 0;
+      font-size: .5em;
+      font-family: $mono-font;
+      font-weight: bold;
+      &, li {
+        list-style: none;
+        margin: 0;
+        margin-bottom: .5em;
+        &.tag {
+          text-transform: none;
+          border-color: $dark-color;
+          background: $dark-color;
+          color: white;
+          border-radius: 1em;
+          padding: .4em .6em;
+        }
+      }
+    }
+    .description {
+      margin: .5em 0;
+      line-height: 1.3em;
+    }
+    .button {
+      font-size: 1em;
+    }
+  }
+}
+
+footer {
+  font-size: 18px;
+  padding: 2em 0;
+  color: $light-grey;
+  h4 {
+    letter-spacing: 0;
+    margin-top: 1em;
+  }
+  p {
+    margin: 0;
+    padding: 0;
+    margin-top: 1em;
+  }
+  a {
+    color: white;
+    transition: all .5s ease-in-out;
+  }
+  .impressum {
+    position: relative;
+    padding-top: 1.5em;
+    margin-top: 1.5em;
+    &::before {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 0;
+      margin-left: 25%;
+      background: darken($light-grey, 40%);
+      height: .2em;
+      width: 50%;
+      min-width: 200px;
+    }
   }
 }

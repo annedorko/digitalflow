@@ -1,60 +1,31 @@
 ---
-layout: default
+layout: landing
 title: Web and Data Coordinator | SEO & Marketing
-class: homepage
+class: landing
 ---
 
+# If you want to...
 
-## You can avoid overwhelm.
+- **Stop worrying** about your website.
+- - **Feel in control** of your digital presence.
+- **Understand** your online strategy.
+- **Be proud** of your website when you see it.
+- Take a freakin’ break.
 
-I believe the web was built to help us do more, better.
+...you are in the right place.
 
-But, despite all its potential for good, it has a way of getting the best of us instead of letting us do our best.
+<a href="{{ site.schedule }}" class="button">Schedule a chat.</a>
 
-## It's time to make what matters.
+<!-- section -->
 
-You've got something great you're trying to do, but the technical sh\*t is dragging you down. Aren't you ready to find your flow doing the stuff that matters and **stop sweating the tech stuff?**
+## Not any solution. _Your_ solution.
 
-_Imagine it:_
+Digital flow is about finding your personal digital best.
 
-Stop worrying about managing your website.
+The best design isn’t about aesthetics, it’s about **function**. The best marketing strategy isn’t the most optimized, it’s the one **you can handle**. The best system isn’t a set standard, it’s specific to **the resources you have**.
 
-Stop trying to learn all the ins and outs of search engine optimization.
+Chasing the next new shiny thing is rarely the right answer.
 
-Stop researching domain and hosting costs.
+It's my job to keep up with all your options and make sure you're using the one that's the best fit for you.
 
-Stop spinning your wheels on automation.
-
-Sounds good, right?
-
-## I can help you get a grip.
-
-I've been connecting the dots between business ideas, websites, web services, and online marketing for about 15 years.
-
-I know how to set up systems that work, and more importantly, that help _you_ work.
-
-I know how to scrape data from one format and convert it into another.
-
-I know how to drip content and deliver it to your audience in more ways than I can reasonably list.
-
-I know how to design a simple, pleasing aesthetic.
-
-I know how to write engaging content.
-
-I know how to sync databases, logins, and connect things together that were never really meant to be connected together.
-
-I know how to administrate web servers.
-
-I know how to build and deploy static websites for free.
-
-I know how to turn WordPress into a fully-fledged crowd-funded membership website powered by Stripe.
-
-...I think you get the idea. I know how to do _a lot_, and I know how to do it well.
-
-If you are running a business or a project and have found yourself in over your head and aren't even sure what you need, there's a good chance I can help you figure things out.
-
-## Let's get started.
-
-Book a call and we can talk about how I can help you find your **digital flow**.
-
-<a href="https://calendly.com/annedorko/15min" class="button primary" target="_blank"><i class="fas fa-mug-hot"></i> Book a call.</a>
+<p class="text-center"><a href="{{ site.url }}/services/" class="button">Check out my services.</a></p>

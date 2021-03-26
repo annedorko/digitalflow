@@ -1,0 +1,20 @@
+{% include header.html class=page.class %}
+  {% assign sections = content | split: '<!-- section -->' %}
+  {% for section in sections %}
+  {% assign columns = section | split: '<!-- column -->' %}
+  {% capture alternate %}{% cycle "odd", "even" %}{% endcapture %}
+  <section class="{{ alternate }}">
+    <div class="container">
+      <div class="row">
+        {% for column in columns %}
+          {% capture cols %}{% cycle "1", "2" %}{% endcapture %}
+          {% capture width %}{% if columns.size > 1 and cols == "1" %}-6{% endif %}{% endcapture %}
+          <div class="col{{width}}">
+            {{ column }}
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+  {% endfor %}
+{% include footer.html %}

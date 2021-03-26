@@ -1,0 +1,45 @@
+{% include header.html class=page.class %}
+  <section>
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          {{ content }}
+        </div>
+      </div>
+    </div>
+  </section>
+  {% for item in page.portfolio %}
+  {% unless item.name == 'Vegas Aces' %}
+  {% capture alternate %}{% cycle "even", "odd" %}{% endcapture %}
+  <section class="{{ alternate }}">
+    <img src="{{ item.image | default: 'https://placekitten.com/1920/1080' }}" alt="" class="background">
+    <div class="container">
+      <div class="row">
+        <div class="col-6">
+          <div class="preview">
+            <img src="{{ item.image | default: 'https://placekitten.com/1920/1080' }}" alt="{{ item.name }} preview image">
+          </div>
+        </div>
+        <div class="col">
+          <div class="text">
+            <h2>{{ item.name }}</h2>
+            <p class="service">{{ item.service }}</p>
+            {% if item.tools %}
+            <ul class="tools">
+              {% for tool in item.tools %}
+              <li class="tag">{{ tool }}</li>
+              {% endfor %}
+            </ul>
+            {% endif %}
+            <p class="description">{{ item.description }}</p>
+            {% if item.url %}
+            <p><a href="{{ item.url }}" class="button" target="_blank">View live</a></p>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  {% endunless %}
+  {% endfor %}
+{% include footer.html %}
